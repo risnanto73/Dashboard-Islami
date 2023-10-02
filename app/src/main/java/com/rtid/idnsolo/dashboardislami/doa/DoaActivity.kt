@@ -1,3 +1,4 @@
+
 package com.rtid.idnsolo.dashboardislami.doa
 
 import androidx.appcompat.app.AppCompatActivity
@@ -13,8 +14,8 @@ class DoaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val actionBar = supportActionBar
+        actionBar?.title = "Doa Harian"
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        actionBar!!.title = "Doa Harian"
 
         binding = ActivityDoaBinding.inflate(layoutInflater)
         setContentView(binding.root)
