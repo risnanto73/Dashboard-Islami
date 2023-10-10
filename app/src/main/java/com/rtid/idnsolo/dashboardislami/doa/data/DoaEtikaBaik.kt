@@ -5,7 +5,7 @@ import com.rtid.idnsolo.dashboardislami.doa.model.DoaModel
 
 object DoaEtikaBaik {
     private val doaTitle = arrayOf(
-        "Doa ketika bersin",
+        "Doa Ketika Bersin",
         "Doa ketika marah",
         "Doa dalam majelis",
         "Doa untuk orang yang berbuat kebaikan kepadamu"
