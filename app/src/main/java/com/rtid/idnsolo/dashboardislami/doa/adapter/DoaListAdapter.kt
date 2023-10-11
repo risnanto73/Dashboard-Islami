@@ -37,6 +37,7 @@ class DoaListAdapter(
         val doa = listDoa[position]
 
         holder.tvDoa.text = doa.title
+
         Glide.with(holder.itemView.context)
             .load(logo)
             .into(holder.imgDoa)

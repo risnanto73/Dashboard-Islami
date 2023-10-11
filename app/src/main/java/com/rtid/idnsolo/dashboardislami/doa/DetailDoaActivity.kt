@@ -2,6 +2,7 @@ package com.rtid.idnsolo.dashboardislami.doa
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import com.rtid.idnsolo.dashboardislami.R
 import com.rtid.idnsolo.dashboardislami.databinding.ActivityDetailDoaBinding
 import com.rtid.idnsolo.dashboardislami.doa.model.DoaModel
@@ -15,9 +16,6 @@ class DetailDoaActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val doa = intent.getParcelableExtra<DoaModel>(EXTRA_DOA) as DoaModel
-        val actionBar = supportActionBar
-        actionBar!!.title = doa.title
-        actionBar.setDisplayHomeAsUpEnabled(true)
 
         binding.tvTitle.text = doa.title
         binding.tvArabic.text = doa.doa
@@ -29,6 +27,16 @@ class DetailDoaActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {
