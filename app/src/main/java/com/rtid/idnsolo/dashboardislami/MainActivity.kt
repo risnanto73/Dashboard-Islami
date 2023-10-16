@@ -3,13 +3,13 @@ package com.rtid.idnsolo.dashboardislami
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rtid.idnsolo.dashboardislami.databinding.ActivityMainBinding
 import com.rtid.idnsolo.dashboardislami.doa.DoaActivity
 import com.rtid.idnsolo.dashboardislami.inspiration.InspirationData
 import com.rtid.idnsolo.dashboardislami.inspiration.InspirationListAdapter
 import com.rtid.idnsolo.dashboardislami.inspiration.InspirationModel
+import com.rtid.idnsolo.dashboardislami.zakat.ZakatActivity
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
@@ -22,14 +22,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         showRecyclerList()
-        showMenu()
+        moveActivity()
 
     }
 
-    private fun showMenu() {
+    private fun moveActivity() {
         //move activity
         binding.btnDoa.setOnClickListener {
             startActivity(Intent(this, DoaActivity::class.java))
+        }
+        binding.btnZakat.setOnClickListener{
+            startActivity(Intent(this, ZakatActivity::class.java))
         }
     }
 
