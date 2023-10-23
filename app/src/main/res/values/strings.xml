@@ -25,4 +25,7 @@
     <string name="wajib">Wajib</string>
     <string name="zakat_yang_dikeluarkan">Zakat Yang Dikeluarkan</string>
     <string name="harta_keseluruhan">Harta Keseluruhan</string>
+    <string name="nama_penceramah">Nama Penceramah</string>
+    <string name="channel_youtube">Channel Youtube</string>
+    <string name="judul_kajian">Judul Kajian</string>
 </resources>

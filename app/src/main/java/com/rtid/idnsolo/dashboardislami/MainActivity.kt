@@ -9,6 +9,7 @@ import com.rtid.idnsolo.dashboardislami.doa.DoaActivity
 import com.rtid.idnsolo.dashboardislami.inspiration.InspirationData
 import com.rtid.idnsolo.dashboardislami.inspiration.InspirationListAdapter
 import com.rtid.idnsolo.dashboardislami.inspiration.InspirationModel
+import com.rtid.idnsolo.dashboardislami.kajian.KajianActivity
 import com.rtid.idnsolo.dashboardislami.zakat.ZakatActivity
 import java.util.ArrayList
 
@@ -33,6 +34,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnZakat.setOnClickListener{
             startActivity(Intent(this, ZakatActivity::class.java))
+        }
+        binding.btnKajian.setOnClickListener{
+            startActivity(Intent(this, KajianActivity::class.java))
         }
     }
 

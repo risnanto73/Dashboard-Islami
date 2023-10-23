@@ -56,4 +56,5 @@ class ZakatActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
 }
