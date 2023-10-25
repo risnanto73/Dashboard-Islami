@@ -1,5 +1,6 @@
 package com.rtid.idnsolo.dashboardislami.kajian.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rtid.idnsolo.dashboardislami.R
+import com.rtid.idnsolo.dashboardislami.kajian.DetailKajianActivity
 import com.rtid.idnsolo.dashboardislami.kajian.model.KajianModel
 
 class KajianAdapter(private val listKajian: ArrayList<KajianModel>) :
@@ -39,5 +41,11 @@ class KajianAdapter(private val listKajian: ArrayList<KajianModel>) :
         Glide.with(holder.itemView)
             .load(kajian.thumbnail)
             .into(holder.imgThumbnail)
+
+        holder.itemView.setOnClickListener{
+            val intent = Intent(it.context, DetailKajianActivity::class.java)
+            intent.putExtra(DetailKajianActivity.EXTRA_KAJIAN, kajian)
+            it.context.startActivity(intent)
+        }
     }
 }

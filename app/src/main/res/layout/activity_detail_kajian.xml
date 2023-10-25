@@ -70,8 +70,18 @@
                 android:padding="10dp"
                 android:text="@string/lorem_ipsum_dolor_amet" />
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_baseline_share_24"
+                android:id="@+id/fab_share"
+                />
+
         </LinearLayout>
 
     </ScrollView>
+
 
 </LinearLayout>
