@@ -46,5 +46,8 @@
 
     <!--    Permit to internet-->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--    permit to Location-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>

@@ -1,8 +1,9 @@
 package com.rtid.idnsolo.dashboardislami
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rtid.idnsolo.dashboardislami.databinding.ActivityMainBinding
 import com.rtid.idnsolo.dashboardislami.doa.DoaActivity
@@ -11,7 +12,10 @@ import com.rtid.idnsolo.dashboardislami.inspiration.InspirationListAdapter
 import com.rtid.idnsolo.dashboardislami.inspiration.InspirationModel
 import com.rtid.idnsolo.dashboardislami.kajian.KajianActivity
 import com.rtid.idnsolo.dashboardislami.zakat.ZakatActivity
-import java.util.ArrayList
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +28,31 @@ class MainActivity : AppCompatActivity() {
 
         showRecyclerList()
         moveActivity()
+        initTimeForSholat()
 
+    }
+
+    private fun initTimeForSholat() {
+
+        val timeNow = Calendar.getInstance()
+        val timeFormat = SimpleDateFormat("HH")
+        val time = timeFormat.format(timeNow.time)
+
+        when{
+            // 0..6 -> {}
+            time.toInt() in 0..5 -> binding.imgHeader.setImageResource(
+                R.drawable.bg_header_dashboard_night
+            )
+            time.toInt() in 6..11 -> binding.imgHeader.setImageResource(
+                R.drawable.bg_header_dashboard_morning
+            )
+            time.toInt() in 12..17 -> binding.imgHeader.setImageResource(
+                R.drawable.bg_header_dashboard_afternoon
+            )
+            time.toInt() in 18..23 -> binding.imgHeader.setImageResource(
+                R.drawable.bg_header_dashboard_night
+            )
+        }
     }
 
     private fun moveActivity() {
